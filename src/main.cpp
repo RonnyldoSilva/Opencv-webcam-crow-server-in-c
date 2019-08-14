@@ -50,9 +50,10 @@ int main()
     CROW_ROUTE(app,"/hell")
     ([](){
         VideoCapture capture(0);
-	Mat frame;
+	
 
         while(true){
+		Mat frame;
 		capture >> frame;
                 vector<uchar> buf;
                 imencode(".jpg", frame, buf);
